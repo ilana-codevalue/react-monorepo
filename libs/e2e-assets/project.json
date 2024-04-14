@@ -1,0 +1,41 @@
+{
+  "name": "e2e-assets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/e2e-assets/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/e2e-assets",
+        "main": "libs/e2e-assets/src/index.ts",
+        "tsConfig": "libs/e2e-assets/tsconfig.lib.json",
+        "assets": [
+          "libs/e2e-assets/*.md",
+          {
+            "input": "./libs/e2e-assets/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/e2e-assets/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/e2e-assets",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/e2e-assets",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

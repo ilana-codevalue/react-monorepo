@@ -1,0 +1,1 @@
+import '../../../../libs/e2e-assets/src/index';
