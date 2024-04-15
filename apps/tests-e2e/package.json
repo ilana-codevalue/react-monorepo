@@ -4,17 +4,14 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "e2e-test-app1": "nx open-cypress --config-file ./cypress/configs/app1.config.ts",
-    "e2e-test-app2": "nx open-cypress --config-file ./cypress/configs/app2.config.ts",
-    "start-app1": "nx run app1:serve",
-    "start-app2": "nx run app2:serve"
+    "start": "nx run-many -t serve -p app1 app2",
+    "test": "nx run tests-e2e:e2e"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@nx/cypress": "18.2.4",
     "cypress": "^13.7.3",
-    "start-server-and-test": "^2.0.3",
     "typescript": "^5.4.5"
   }
 }
